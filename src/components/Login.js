@@ -12,8 +12,8 @@ class Login extends Component {
     }
   }
   render() {
-    debugger;
-  if (this.props.user) {
+    // if they are logged in don't show this
+    if (this.props.userIsAlreadyLoggedIn) {
       return null;
     }
     //guard clause to hid the log in when you're logged in!
@@ -60,14 +60,17 @@ class Login extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return state;
-// }
-// mapping the state from redux to the props
-
 const mapActionsToProps = { login };
 // this is an object that points at functions
 
-export default connect(null, mapActionsToProps)(Login);
+const mapStateToProps = (state) => {
+  return {
+    userIsAlreadyLoggedIn: !!state.loggedInUser
+  }
+}
+// mapping the state from redux to the props
+// we need this to determine if the loggedinuser is no longer null
+
+export default connect(mapStateToProps, mapActionsToProps)(Login);
 // this is a function that returns a  function and passes the component
 // hooking it up via redux
