@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { login } from '../actions';
 
 class Login extends Component {
   constructor(props){
@@ -33,8 +36,8 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    // submit a redux action
-    
+    this.props.login(this.state.username, this.state.password);
+
     this.setState({
       username: '',
       password: ''
@@ -52,4 +55,14 @@ class Login extends Component {
   }
 }
 
-export default Login;
+// const mapStateToProps = (state) => {
+//   return state;
+// }
+// mapping the state from redux to the props
+
+const mapActionsToProps = { login };
+// this is an object that points at functions
+
+export default connect(null, mapActionsToProps)(Login);
+// this is a function that returns a  function and passes the component
+// hooking it up via redux
