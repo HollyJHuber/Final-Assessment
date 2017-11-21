@@ -4,14 +4,45 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.Login {
+ul, li {
+  margin: 0;
+  list-style-type: none;
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+.Login, .Profile {
   width: 500px;
   margin: 30px auto;
+  padding: 1em;
   text-align: center;
   background-color: #63CEC2;
 }
 
 .Login input{
- margin: 10px;
- border-radius: 10px;
+  margin: 1em;
+}
+button, input{
+  width: 200px;
+  height: 2em;
+  border-radius: 10px;
+}
+
+.Login button{
+  margin: 0.5em;
+}
+.flexContainer{
+  display: flex;
+}
+
+.Profile img{
+  width: 200px;
+  height: 136px;
+}
+
+.Profile li{
+  text-align: left;
+  padding-bottom: .25em;
 }
