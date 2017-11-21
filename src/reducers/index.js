@@ -5,7 +5,7 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case 'LOGIN_SUCCESS':
-            logInUser(state, action.user);
+            return logInUser(state, action.user);
         default:
             return state;
     }
@@ -16,3 +16,5 @@ function logInUser(state, user) {
         loggedInUser: user
     })
 }
+// Object.assign is a method on the class Object
+//it starts with a blank object {}, applies state, and then applies the 

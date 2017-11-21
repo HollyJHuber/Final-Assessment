@@ -12,6 +12,11 @@ class Login extends Component {
     }
   }
   render() {
+    debugger;
+  if (this.props.user) {
+      return null;
+    }
+    //guard clause to hid the log in when you're logged in!
     return (
       <div className = "Login">
         <form onSubmit = {this.handleSubmit}>
