@@ -23,17 +23,19 @@ class Login extends Component {
           <h2> Sign In </h2>
           <input  type = "text"
                   name = "username" 
+                  placeholder = "User Name"
                   value = {this.state.username}
                   onChange={this.handleName}/>
           <br />
           <input  type = "password"
                   name = "password" 
+                  placeholder = "Password"
                   value={this.state.password}
                   onChange={this.handlePassword}/>
           <br />
           <button type = "submit">Sign In</button>
         </form>
-        <span>Forgot your password?</span>
+        <span><a>Forgot your password?</a></span>
       </div>
     );
   }

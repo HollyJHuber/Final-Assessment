@@ -41,7 +41,7 @@ class Profile extends Component {
             <li>Location: {this.props.user.location}</li>
           </ul>
         </div>
-        <h4>Edit Profile</h4>
+        <h4><a>Edit Profile</a></h4>
       </div>
     );
   }
